@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import {createStore} from 'redux'
 import './App.css';
+
+
+function reducer(){
+  return{
+    user: {
+      name: 'Dustin'
+    }, 
+    movies: [
+      'Star Wars', 
+      'Lord of the Rings', 
+      'Harry Potter'
+    ],
+    todoList: [
+      {task: 'Learn Redux', id: 0, completed: false }
+    ],
+    moviesToWatch: 13
+  }
+}
+
+// Reducer is the same as having state
+
+const store = createStore(reducer);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>
+        This is react!
+      </p>
+     
     </div>
   );
 }
